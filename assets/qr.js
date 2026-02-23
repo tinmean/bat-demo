@@ -6,7 +6,7 @@
     target.innerHTML = "";
 
     if (!text) {
-      target.textContent = "No QR payload";
+      target.textContent = "無 QR payload / No QR payload";
       return;
     }
 
@@ -22,7 +22,7 @@
       "&data=" + encodeURIComponent(text);
 
     img.addEventListener("error", function () {
-      target.textContent = "QR preview unavailable";
+      target.textContent = "QR 預覽無法載入 / QR preview unavailable";
     });
 
     target.appendChild(img);

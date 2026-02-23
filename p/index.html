@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battery Passport</title>
+  <title>電池護照 / Battery Passport</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body data-page="passport">
   <header class="site-header site-header-compact">
     <div class="wrap">
-      <a class="back-link" href="../index.html">← Back to list</a>
-      <p class="eyebrow">Battery Passport</p>
-      <h1 id="passport-title">Loading...</h1>
+      <a class="back-link" href="../index.html">← 返回列表 / Back to list</a>
+      <p class="eyebrow">電池護照 / Battery Passport</p>
+      <h1 id="passport-title">載入中... / Loading...</h1>
       <p id="passport-subtitle" class="lead compact"></p>
     </div>
   </header>
@@ -19,46 +19,48 @@
   <main class="wrap passport-layout">
     <section class="panel">
       <div id="passport-error" class="error hidden" role="alert"></div>
-      <div id="passport-loading" class="muted">Loading passport data...</div>
+      <div id="passport-loading" class="muted">載入護照資料中... / Loading passport data...</div>
 
       <div id="passport-shell" class="hidden">
         <div class="passport-top">
           <div class="passport-actions">
-            <button id="download-json" class="btn" type="button">Download JSON</button>
+            <button id="download-json" class="btn" type="button">下載 JSON / Download JSON</button>
             <label class="field field-inline">
-              <span>Search within passport</span>
-              <input id="passport-search" type="search" placeholder="Filter visible fields">
+              <span>護照內搜尋 / Search within passport</span>
+              <input id="passport-search" type="search" placeholder="依關鍵字篩選可見欄位 / Filter visible fields">
             </label>
           </div>
           <div class="qr-card">
-            <h2>QR / GS1 Digital Link</h2>
+            <h2>QR 碼 / GS1 Digital Link</h2>
             <div id="qr-target" class="qr-target" aria-label="QR code"></div>
             <p id="qr-text" class="mono small"></p>
           </div>
         </div>
 
         <div class="tabs" role="tablist" aria-label="Access views">
-          <button id="tab-public" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-public">Public</button>
-          <button id="tab-restricted" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-restricted">Restricted (concept)</button>
+          <button id="tab-public" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-public">公開 / Public</button>
+          <button id="tab-restricted" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-restricted">受限（概念）/ Restricted (concept)</button>
         </div>
 
         <section id="panel-public" class="tab-panel" role="tabpanel" aria-labelledby="tab-public">
           <div id="passport-sections"></div>
-          <p id="search-empty" class="muted hidden">No visible fields match the filter.</p>
+          <p id="search-empty" class="muted hidden">找不到符合篩選條件的欄位。 / No visible fields match the filter.</p>
         </section>
 
         <section id="panel-restricted" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-restricted">
           <div class="panel-note">
-            <h2>Restricted Access (Concept Only)</h2>
+            <h2>受限存取（僅概念示意）/ Restricted Access (Concept Only)</h2>
             <p>
+              本示範未實作身分驗證或授權機制。實際電池護照系統中，受限資訊的存取會依適用法規（包含 Annex XIII 要求與相關 implementing act）治理，
+              並由身分與存取管理層執行。<br>
               This demo does not implement authentication or authorization. In a production battery passport system, access to
               restricted information would be governed by the applicable legal framework (including Annex XIII requirements and
               the implementing act) and enforced by an identity/access management layer.
             </p>
             <ul>
-              <li>Example restricted content: detailed compliance evidence, supply-chain attestations, proprietary test reports.</li>
-              <li>Example controls: role-based access, organization trust relationships, audit logging, consent/entitlement checks.</li>
-              <li>This tab is a UI placeholder only.</li>
+              <li>受限內容示例：詳細合規證據、供應鏈佐證、專有測試報告。 / Example restricted content: detailed compliance evidence, supply-chain attestations, proprietary test reports.</li>
+              <li>控制方式示例：角色權限、組織信任關係、稽核紀錄、授權/權利檢查。 / Example controls: role-based access, organization trust relationships, audit logging, consent/entitlement checks.</li>
+              <li>此分頁僅為 UI 佔位。 / This tab is a UI placeholder only.</li>
             </ul>
           </div>
         </section>

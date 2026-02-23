@@ -4,11 +4,11 @@
   "modelId": "ITB-EV75",
   "identification": {
     "modelName": "ITB-EV75",
-    "category": "EV traction battery",
+    "category": "電動車牽引電池 / EV traction battery",
     "manufacturer": "InterTrade Batteries GmbH",
     "manufacturerAddress": "Aachen, Germany",
     "chemistry": "NMC",
-    "intendedUse": "Passenger EV traction"
+    "intendedUse": "乘用電動車牽引用途 / Passenger EV traction"
   },
   "technical": {
     "nominalEnergyKWh": 75,
@@ -36,14 +36,14 @@
       "lithium": 7,
       "lead": 0
     },
-    "responsibleSourcingStatement": "Supplier due diligence program aligned to OECD guidance (demo statement).",
-    "conformityDeclarationUrl": "https://demo.example.org/docs/itb-ev75-conformity.pdf"
+    "responsibleSourcingStatement": "供應商盡職調查方案對齊 OECD 指引（示範聲明）。 / Supplier due diligence program aligned to OECD guidance (demo statement).",
+    "conformityDeclarationUrl": "https://tinmean.github.io/bat-demo/docs/itb-ev75-conformity.pdf"
   },
   "circularity": {
     "replaceableModules": true,
-    "diagnosticsInterface": "UDS over CAN (service mode)",
-    "disassemblyGuidanceLevel": "Authorized repair network",
-    "takeBackProgram": "EU collection partner network available",
+    "diagnosticsInterface": "UDS over CAN（維修模式）/ UDS over CAN (service mode)",
+    "disassemblyGuidanceLevel": "授權維修網路 / Authorized repair network",
+    "takeBackProgram": "提供歐盟回收夥伴網路 / EU collection partner network available",
     "recyclingEfficiencyTargetPct": 90
   }
 }

@@ -8,7 +8,7 @@
     "manufacturer": "InterTrade Batteries GmbH",
     "manufacturingDate": "2024-01-01",
     "manufacturingPlant": "DE-AC-01",
-    "status": "Placed on market"
+    "status": "已上市 / Placed on market"
   },
   "technical": {
     "firmwareVersion": "BMS-3.12.4",
@@ -20,15 +20,15 @@
   "sustainability": {
     "batteryCarbonFootprintClass": "B",
     "repairHistoryCount": 1,
-    "warrantyStatus": "Active",
+    "warrantyStatus": "有效 / Active",
     "countryOfFinalAssembly": "DE"
   },
   "circularity": {
     "remanufacturingEligible": true,
-    "secondLifeSuitability": "Likely, pending diagnostic validation",
+    "secondLifeSuitability": "可能適合，待診斷驗證 / Likely, pending diagnostic validation",
     "disassemblySafetyNotes": [
-      "High-voltage isolation required",
-      "Wait time after shutdown per service guide"
+      "需進行高壓隔離 / High-voltage isolation required",
+      "依維修手冊關機後等待 / Wait time after shutdown per service guide"
     ]
   },
   "events": [
@@ -37,7 +37,7 @@
       "date": "2024-01-01",
       "actor": "InterTrade Batteries GmbH",
       "location": "Aachen, Germany",
-      "description": "Pack assembly completed and end-of-line test passed.",
+      "description": "電池包組裝完成並通過產線末端測試。 / Pack assembly completed and end-of-line test passed.",
       "lineId": "PACK-L2"
     },
     {
@@ -45,14 +45,14 @@
       "date": "2024-01-08",
       "actor": "OEM Assembly Plant",
       "location": "Ghent, Belgium",
-      "description": "Battery paired with vehicle VIN (redacted in public view)."
+      "description": "電池已與車輛 VIN 配對（公開視圖隱去）。 / Battery paired with vehicle VIN (redacted in public view)."
     },
     {
       "type": "Service Inspection",
       "date": "2025-06-12",
       "actor": "Authorized Service Center",
       "location": "Rotterdam, Netherlands",
-      "description": "Software update and cooling loop inspection completed.",
+      "description": "完成軟體更新與冷卻迴路檢查。 / Software update and cooling loop inspection completed.",
       "serviceActionCode": "BMS-UPD-3124"
     }
   ]

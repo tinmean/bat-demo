@@ -8,7 +8,7 @@
     "manufacturer": "InterTrade Batteries GmbH",
     "manufacturingDate": "2024-01-15",
     "manufacturingPlant": "DE-AC-02",
-    "status": "Commissioned"
+    "status": "已投運 / Commissioned"
   },
   "technical": {
     "firmwareVersion": "ESS-BMS-2.7.1",
@@ -18,17 +18,17 @@
       "Modbus RTU",
       "CANopen"
     ],
-    "installationType": "Indoor rack"
+    "installationType": "室內機架式 / Indoor rack"
   },
   "sustainability": {
     "batteryCarbonFootprintClass": "A",
-    "warrantyStatus": "Active",
-    "maintenanceContract": "Standard 3-year remote monitoring (demo)"
+    "warrantyStatus": "有效 / Active",
+    "maintenanceContract": "標準 3 年遠端監控（示範）/ Standard 3-year remote monitoring (demo)"
   },
   "circularity": {
     "moduleSwapPerformed": false,
-    "secondLifeSuitability": "Under evaluation after end of primary use",
-    "materialRecoveryInstructionsUrl": "https://demo.example.org/docs/itb-ess10-recovery.pdf"
+    "secondLifeSuitability": "主要用途結束後評估中 / Under evaluation after end of primary use",
+    "materialRecoveryInstructionsUrl": "https://tinmean.github.io/bat-demo/docs/itb-ess10-recovery.pdf"
   },
   "events": [
     {
@@ -36,14 +36,14 @@
       "date": "2024-01-15",
       "actor": "InterTrade Batteries GmbH",
       "location": "Aachen, Germany",
-      "description": "Production and initial QC completed."
+      "description": "生產與初步品管完成。 / Production and initial QC completed."
     },
     {
       "type": "Site Commissioning",
       "date": "2024-02-03",
       "actor": "Integrator Partner",
       "location": "Lyon, France",
-      "description": "Installed in commercial building backup + peak shaving system."
+      "description": "安裝於商用建築備援與削峰系統。 / Installed in commercial building backup + peak shaving system."
     }
   ]
 }

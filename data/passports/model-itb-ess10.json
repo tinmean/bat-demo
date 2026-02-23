@@ -4,11 +4,11 @@
   "modelId": "ITB-ESS10",
   "identification": {
     "modelName": "ITB-ESS10",
-    "category": "Industrial stationary battery",
+    "category": "工業儲能電池 / Industrial stationary battery",
     "manufacturer": "InterTrade Batteries GmbH",
     "manufacturerAddress": "Aachen, Germany",
     "chemistry": "LFP",
-    "intendedUse": "Commercial and industrial stationary storage"
+    "intendedUse": "商用與工業用固定式儲能 / Commercial and industrial stationary storage"
   },
   "technical": {
     "nominalEnergyKWh": 10.2,
@@ -32,14 +32,14 @@
       "aluminum": 23,
       "copper": 19
     },
-    "responsibleSourcingStatement": "Supplier screening and smelter traceability program (demo statement).",
-    "conformityDeclarationUrl": "https://demo.example.org/docs/itb-ess10-conformity.pdf"
+    "responsibleSourcingStatement": "供應商篩選與冶煉廠可追溯方案（示範聲明）。 / Supplier screening and smelter traceability program (demo statement).",
+    "conformityDeclarationUrl": "https://tinmean.github.io/bat-demo/docs/itb-ess10-conformity.pdf"
   },
   "circularity": {
     "replaceableModules": true,
     "firmwareUpdatable": true,
-    "disassemblyGuidanceLevel": "Qualified technician",
-    "stateOfHealthExport": "CSV via local service port",
-    "takeBackProgram": "Regional partner network"
+    "disassemblyGuidanceLevel": "合格技術人員 / Qualified technician",
+    "stateOfHealthExport": "透過本地維修埠匯出 CSV / CSV via local service port",
+    "takeBackProgram": "區域合作夥伴網路 / Regional partner network"
   }
 }

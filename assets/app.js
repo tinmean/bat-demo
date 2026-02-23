@@ -2,7 +2,13 @@
   "use strict";
 
   var PRODUCTS_CSV_PATH = "./data/products.csv";
-  var PASSPORT_SECTIONS = ["Identification", "Technical", "Sustainability", "Circularity", "Events"];
+  var PASSPORT_SECTIONS = [
+    { key: "identification", label: "識別資訊 / Identification" },
+    { key: "technical", label: "技術資料 / Technical" },
+    { key: "sustainability", label: "永續性 / Sustainability" },
+    { key: "circularity", label: "循環性 / Circularity" },
+    { key: "events", label: "事件紀錄 / Events" }
+  ];
 
   document.addEventListener("DOMContentLoaded", function () {
     var page = document.body && document.body.dataset && document.body.dataset.page;
@@ -38,7 +44,7 @@
           ].join(" ").toLowerCase().indexOf(q) !== -1;
         });
         renderProductList(listEl, filtered);
-        statusEl.textContent = filtered.length + " result" + (filtered.length === 1 ? "" : "s");
+        statusEl.textContent = "共 " + filtered.length + " 筆結果 / " + filtered.length + " result" + (filtered.length === 1 ? "" : "s");
       }
 
       searchInput.addEventListener("input", function () {
@@ -51,7 +57,7 @@
       listEl.innerHTML = "";
       var msg = document.createElement("div");
       msg.className = "error";
-      msg.textContent = "Unable to load product index: " + error.message;
+      msg.textContent = "無法載入產品索引 / Unable to load product index: " + error.message;
       listEl.appendChild(msg);
     }
   }
@@ -63,13 +69,13 @@
     try {
       var uid = extractUidFromLocation();
       if (!uid) {
-        throw new Error("Missing UID. Use /p/01/.../21/... or /p/?uid=...");
+        throw new Error("缺少 UID。請使用 /p/01/.../21/... 或 /p/?uid=... / Missing UID. Use /p/01/.../21/... or /p/?uid=...");
       }
 
       var records = await loadProductsIndexForPassportPage();
       var product = records.find(function (row) { return normalizeUid(row.uid) === normalizeUid(uid); });
       if (!product) {
-        throw new Error("UID not found in products.csv: " + uid);
+        throw new Error("在 products.csv 找不到此 UID / UID not found in products.csv: " + uid);
       }
 
       var batteryPassport = await fetchJson(resolveFromPage(product.passportJsonUrl));
@@ -95,7 +101,7 @@
     if (!items.length) {
       var empty = document.createElement("p");
       empty.className = "muted";
-      empty.textContent = "No matching passports.";
+      empty.textContent = "找不到符合的護照資料。 / No matching passports.";
       container.appendChild(empty);
       return;
     }
@@ -112,12 +118,12 @@
       dl.className = "meta-grid";
       addMeta(dl, "UID", row.uid);
       addMeta(dl, "GTIN", row.gtin);
-      addMeta(dl, "Category", row.category);
-      addMeta(dl, "Passport JSON", row.passportJsonUrl);
+      addMeta(dl, "類別 / Category", row.category);
+      addMeta(dl, "護照 JSON / Passport JSON", row.passportJsonUrl);
 
       var badge = document.createElement("span");
       badge.className = "badge";
-      badge.textContent = "Open Passport";
+      badge.textContent = "開啟護照 / Open Passport";
 
       card.appendChild(link);
       card.appendChild(dl);
@@ -183,8 +189,8 @@
   function renderPassportSections(container, composed) {
     container.innerHTML = "";
 
-    PASSPORT_SECTIONS.forEach(function (sectionName) {
-      var key = sectionName.toLowerCase();
+    PASSPORT_SECTIONS.forEach(function (sectionDef) {
+      var key = sectionDef.key;
       var sectionData = composed[key];
       if (!sectionData || (Array.isArray(sectionData) && sectionData.length === 0)) return;
 
@@ -193,7 +199,7 @@
       section.dataset.section = key;
 
       var h2 = document.createElement("h2");
-      h2.textContent = sectionName;
+      h2.textContent = sectionDef.label;
       section.appendChild(h2);
 
       if (key === "events") {
@@ -276,7 +282,7 @@
     events.forEach(function (eventItem, index) {
       var article = document.createElement("article");
       article.className = "event-item searchable";
-      var title = eventItem.type || ("Event " + (index + 1));
+      var title = eventItem.type || ("事件 / Event " + (index + 1));
       article.dataset.searchText = (title + " " + JSON.stringify(eventItem)).toLowerCase();
 
       var h3 = document.createElement("h3");
@@ -286,9 +292,9 @@
       var meta = document.createElement("p");
       meta.className = "event-meta";
       meta.textContent = [
-        eventItem.date ? "Date: " + eventItem.date : "",
-        eventItem.actor ? "Actor: " + eventItem.actor : "",
-        eventItem.location ? "Location: " + eventItem.location : ""
+        eventItem.date ? "日期 Date: " + eventItem.date : "",
+        eventItem.actor ? "執行者 Actor: " + eventItem.actor : "",
+        eventItem.location ? "地點 Location: " + eventItem.location : ""
       ].filter(Boolean).join(" · ");
       if (meta.textContent) article.appendChild(meta);
 

@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Battery DPP Demo</title>
+  <title>電池 DPP 示範站 / Battery DPP Demo</title>
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body data-page="home">
   <header class="site-header">
     <div class="wrap">
-      <p class="eyebrow">Battery Passport Demo</p>
-      <h1>Static Battery DPP (Digital Product Passport)</h1>
+      <p class="eyebrow">電池護照示範 / Battery Passport Demo</p>
+      <h1>靜態電池 DPP（數位產品護照）/ Static Battery DPP (Digital Product Passport)</h1>
       <p class="lead">
+        使用純靜態檔案（CSV 索引 + JSON 護照）透過 QR 綁定 UID 解析公開電池護照頁面。<br>
         Public, machine-readable passport pages resolved from a QR-linked UID using only static files (CSV index + JSON passports).
       </p>
     </div>
@@ -20,24 +21,24 @@
   <main class="wrap home-layout">
     <section class="panel">
       <div class="panel-head">
-        <h2>Find a Battery Passport</h2>
-        <p>Search by UID, GTIN, serial number, model, or category.</p>
+        <h2>查找電池護照 / Find a Battery Passport</h2>
+        <p>可用 UID、GTIN、序號、型號或類別搜尋。 / Search by UID, GTIN, serial number, model, or category.</p>
       </div>
       <label class="field">
-        <span>Search</span>
-        <input id="product-search" type="search" placeholder="e.g. EV75-240101-000042 or 09501234000017">
+        <span>搜尋 / Search</span>
+        <input id="product-search" type="search" placeholder="例如 EV75-240101-000042 或 09501234000017 / e.g. ...">
       </label>
       <div id="home-status" class="muted" aria-live="polite"></div>
       <div id="product-list" class="card-list" aria-live="polite"></div>
     </section>
 
     <section class="panel panel-note">
-      <h2>Demo Notes</h2>
+      <h2>示範說明 / Demo Notes</h2>
       <ul>
-        <li>Static hosting only: no backend, no database.</li>
-        <li>UID routing supports a GS1 Digital Link style path (`/p/01/.../21/...`).</li>
-        <li>Passport data is stored in JSON and indexed via `data/products.csv`.</li>
-        <li>Public vs restricted access is a UI concept only in this demo.</li>
+        <li>純靜態託管：無後端、無資料庫。 / Static hosting only: no backend, no database.</li>
+        <li>UID 路由支援 GS1 Digital Link 風格路徑（`/p/01/.../21/...`）。 / UID routing supports a GS1 Digital Link style path (`/p/01/.../21/...`).</li>
+        <li>護照資料以 JSON 儲存，並由 `data/products.csv` 建立索引。 / Passport data is stored in JSON and indexed via `data/products.csv`.</li>
+        <li>公開/受限存取僅為 UI 概念展示，未實作真實驗證。 / Public vs restricted access is a UI concept only in this demo.</li>
       </ul>
     </section>
   </main>
