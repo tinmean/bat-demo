@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battery Passport</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="passport">
+  <header class="site-header site-header-compact">
+    <div class="wrap">
+      <a class="back-link" href="../index.html">← Back to list</a>
+      <p class="eyebrow">Battery Passport</p>
+      <h1 id="passport-title">Loading...</h1>
+      <p id="passport-subtitle" class="lead compact"></p>
+    </div>
+  </header>
+
+  <main class="wrap passport-layout">
+    <section class="panel">
+      <div id="passport-error" class="error hidden" role="alert"></div>
+      <div id="passport-loading" class="muted">Loading passport data...</div>
+
+      <div id="passport-shell" class="hidden">
+        <div class="passport-top">
+          <div class="passport-actions">
+            <button id="download-json" class="btn" type="button">Download JSON</button>
+            <label class="field field-inline">
+              <span>Search within passport</span>
+              <input id="passport-search" type="search" placeholder="Filter visible fields">
+            </label>
+          </div>
+          <div class="qr-card">
+            <h2>QR / GS1 Digital Link</h2>
+            <div id="qr-target" class="qr-target" aria-label="QR code"></div>
+            <p id="qr-text" class="mono small"></p>
+          </div>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Access views">
+          <button id="tab-public" class="tab is-active" type="button" role="tab" aria-selected="true" aria-controls="panel-public">Public</button>
+          <button id="tab-restricted" class="tab" type="button" role="tab" aria-selected="false" aria-controls="panel-restricted">Restricted (concept)</button>
+        </div>
+
+        <section id="panel-public" class="tab-panel" role="tabpanel" aria-labelledby="tab-public">
+          <div id="passport-sections"></div>
+          <p id="search-empty" class="muted hidden">No visible fields match the filter.</p>
+        </section>
+
+        <section id="panel-restricted" class="tab-panel hidden" role="tabpanel" aria-labelledby="tab-restricted">
+          <div class="panel-note">
+            <h2>Restricted Access (Concept Only)</h2>
+            <p>
+              This demo does not implement authentication or authorization. In a production battery passport system, access to
+              restricted information would be governed by the applicable legal framework (including Annex XIII requirements and
+              the implementing act) and enforced by an identity/access management layer.
+            </p>
+            <ul>
+              <li>Example restricted content: detailed compliance evidence, supply-chain attestations, proprietary test reports.</li>
+              <li>Example controls: role-based access, organization trust relationships, audit logging, consent/entitlement checks.</li>
+              <li>This tab is a UI placeholder only.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="../assets/qr.js"></script>
+  <script src="../assets/app.js"></script>
+</body>
+</html>

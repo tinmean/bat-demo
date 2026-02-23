@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battery DPP Demo</title>
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="wrap">
+      <p class="eyebrow">Battery Passport Demo</p>
+      <h1>Static Battery DPP (Digital Product Passport)</h1>
+      <p class="lead">
+        Public, machine-readable passport pages resolved from a QR-linked UID using only static files (CSV index + JSON passports).
+      </p>
+    </div>
+  </header>
+
+  <main class="wrap home-layout">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Find a Battery Passport</h2>
+        <p>Search by UID, GTIN, serial number, model, or category.</p>
+      </div>
+      <label class="field">
+        <span>Search</span>
+        <input id="product-search" type="search" placeholder="e.g. EV75-240101-000042 or 09501234000017">
+      </label>
+      <div id="home-status" class="muted" aria-live="polite"></div>
+      <div id="product-list" class="card-list" aria-live="polite"></div>
+    </section>
+
+    <section class="panel panel-note">
+      <h2>Demo Notes</h2>
+      <ul>
+        <li>Static hosting only: no backend, no database.</li>
+        <li>UID routing supports a GS1 Digital Link style path (`/p/01/.../21/...`).</li>
+        <li>Passport data is stored in JSON and indexed via `data/products.csv`.</li>
+        <li>Public vs restricted access is a UI concept only in this demo.</li>
+      </ul>
+    </section>
+  </main>
+
+  <script src="./assets/qr.js"></script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

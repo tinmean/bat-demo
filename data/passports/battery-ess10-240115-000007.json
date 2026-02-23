@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "demo-battery-passport-1.0",
+  "passportType": "battery-instance",
+  "uid": "01/09501234000024/21/ESS10-240115-000007",
+  "modelId": "ITB-ESS10",
+  "modelPassportUrl": "../data/passports/model-itb-ess10.json",
+  "identification": {
+    "manufacturer": "InterTrade Batteries GmbH",
+    "manufacturingDate": "2024-01-15",
+    "manufacturingPlant": "DE-AC-02",
+    "status": "Commissioned"
+  },
+  "technical": {
+    "firmwareVersion": "ESS-BMS-2.7.1",
+    "stateOfHealthPct": 100,
+    "measuredCapacityAh": 201.2,
+    "communicationProtocols": [
+      "Modbus RTU",
+      "CANopen"
+    ],
+    "installationType": "Indoor rack"
+  },
+  "sustainability": {
+    "batteryCarbonFootprintClass": "A",
+    "warrantyStatus": "Active",
+    "maintenanceContract": "Standard 3-year remote monitoring (demo)"
+  },
+  "circularity": {
+    "moduleSwapPerformed": false,
+    "secondLifeSuitability": "Under evaluation after end of primary use",
+    "materialRecoveryInstructionsUrl": "https://demo.example.org/docs/itb-ess10-recovery.pdf"
+  },
+  "events": [
+    {
+      "type": "Manufactured",
+      "date": "2024-01-15",
+      "actor": "InterTrade Batteries GmbH",
+      "location": "Aachen, Germany",
+      "description": "Production and initial QC completed."
+    },
+    {
+      "type": "Site Commissioning",
+      "date": "2024-02-03",
+      "actor": "Integrator Partner",
+      "location": "Lyon, France",
+      "description": "Installed in commercial building backup + peak shaving system."
+    }
+  ]
+}

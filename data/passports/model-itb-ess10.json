@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "demo-battery-passport-1.0",
+  "passportType": "battery-model",
+  "modelId": "ITB-ESS10",
+  "identification": {
+    "modelName": "ITB-ESS10",
+    "category": "Industrial stationary battery",
+    "manufacturer": "InterTrade Batteries GmbH",
+    "manufacturerAddress": "Aachen, Germany",
+    "chemistry": "LFP",
+    "intendedUse": "Commercial and industrial stationary storage"
+  },
+  "technical": {
+    "nominalEnergyKWh": 10.2,
+    "nominalVoltageV": 51.2,
+    "ratedCapacityAh": 200,
+    "maxChargePowerKw": 5,
+    "maxDischargePowerKw": 5,
+    "weightKg": 96,
+    "dimensionsMm": {
+      "length": 620,
+      "width": 460,
+      "height": 220
+    },
+    "designCycleLife": 6000,
+    "ingressProtection": "IP20"
+  },
+  "sustainability": {
+    "carbonFootprintKgCO2e": 610,
+    "recycledContentPct": {
+      "lithium": 6,
+      "aluminum": 23,
+      "copper": 19
+    },
+    "responsibleSourcingStatement": "Supplier screening and smelter traceability program (demo statement).",
+    "conformityDeclarationUrl": "https://demo.example.org/docs/itb-ess10-conformity.pdf"
+  },
+  "circularity": {
+    "replaceableModules": true,
+    "firmwareUpdatable": true,
+    "disassemblyGuidanceLevel": "Qualified technician",
+    "stateOfHealthExport": "CSV via local service port",
+    "takeBackProgram": "Regional partner network"
+  }
+}

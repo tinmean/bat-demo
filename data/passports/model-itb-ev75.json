@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "demo-battery-passport-1.0",
+  "passportType": "battery-model",
+  "modelId": "ITB-EV75",
+  "identification": {
+    "modelName": "ITB-EV75",
+    "category": "EV traction battery",
+    "manufacturer": "InterTrade Batteries GmbH",
+    "manufacturerAddress": "Aachen, Germany",
+    "chemistry": "NMC",
+    "intendedUse": "Passenger EV traction"
+  },
+  "technical": {
+    "nominalEnergyKWh": 75,
+    "nominalVoltageV": 355,
+    "ratedCapacityAh": 211,
+    "maxChargePowerKw": 150,
+    "maxDischargePowerKw": 220,
+    "weightKg": 468,
+    "dimensionsMm": {
+      "length": 1680,
+      "width": 1180,
+      "height": 165
+    },
+    "designCycleLife": 1800,
+    "operatingTemperatureC": {
+      "min": -20,
+      "max": 55
+    }
+  },
+  "sustainability": {
+    "carbonFootprintKgCO2e": 4320,
+    "recycledContentPct": {
+      "cobalt": 18,
+      "nickel": 14,
+      "lithium": 7,
+      "lead": 0
+    },
+    "responsibleSourcingStatement": "Supplier due diligence program aligned to OECD guidance (demo statement).",
+    "conformityDeclarationUrl": "https://demo.example.org/docs/itb-ev75-conformity.pdf"
+  },
+  "circularity": {
+    "replaceableModules": true,
+    "diagnosticsInterface": "UDS over CAN (service mode)",
+    "disassemblyGuidanceLevel": "Authorized repair network",
+    "takeBackProgram": "EU collection partner network available",
+    "recyclingEfficiencyTargetPct": 90
+  }
+}

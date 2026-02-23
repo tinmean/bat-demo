@@ -1,0 +1,59 @@
+{
+  "schemaVersion": "demo-battery-passport-1.0",
+  "passportType": "battery-instance",
+  "uid": "01/09501234000017/21/EV75-240101-000042",
+  "modelId": "ITB-EV75",
+  "modelPassportUrl": "../data/passports/model-itb-ev75.json",
+  "identification": {
+    "manufacturer": "InterTrade Batteries GmbH",
+    "manufacturingDate": "2024-01-01",
+    "manufacturingPlant": "DE-AC-01",
+    "status": "Placed on market"
+  },
+  "technical": {
+    "firmwareVersion": "BMS-3.12.4",
+    "stateOfHealthPct": 98,
+    "measuredCapacityAh": 207.5,
+    "serviceConnectorPresent": true,
+    "hazardLabelVersion": "EV-NMC-2024.1"
+  },
+  "sustainability": {
+    "batteryCarbonFootprintClass": "B",
+    "repairHistoryCount": 1,
+    "warrantyStatus": "Active",
+    "countryOfFinalAssembly": "DE"
+  },
+  "circularity": {
+    "remanufacturingEligible": true,
+    "secondLifeSuitability": "Likely, pending diagnostic validation",
+    "disassemblySafetyNotes": [
+      "High-voltage isolation required",
+      "Wait time after shutdown per service guide"
+    ]
+  },
+  "events": [
+    {
+      "type": "Manufactured",
+      "date": "2024-01-01",
+      "actor": "InterTrade Batteries GmbH",
+      "location": "Aachen, Germany",
+      "description": "Pack assembly completed and end-of-line test passed.",
+      "lineId": "PACK-L2"
+    },
+    {
+      "type": "Vehicle Integration",
+      "date": "2024-01-08",
+      "actor": "OEM Assembly Plant",
+      "location": "Ghent, Belgium",
+      "description": "Battery paired with vehicle VIN (redacted in public view)."
+    },
+    {
+      "type": "Service Inspection",
+      "date": "2025-06-12",
+      "actor": "Authorized Service Center",
+      "location": "Rotterdam, Netherlands",
+      "description": "Software update and cooling loop inspection completed.",
+      "serviceActionCode": "BMS-UPD-3124"
+    }
+  ]
+}
