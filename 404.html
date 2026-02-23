@@ -11,18 +11,34 @@
       var path = window.location.pathname || "/";
       var search = window.location.search || "";
       var hash = window.location.hash || "";
-      var marker = "/p/";
-      var idx = path.indexOf(marker);
-      if (idx !== -1 && path.slice(idx + marker.length)) {
-        var uid = path.slice(idx + marker.length).replace(/\/+$/, "");
-        if (uid) {
-          var target = path.slice(0, idx + marker.length) + "?uid=" + encodeURIComponent(decodeURIComponent(uid)) + hash;
-          if (search && search.indexOf("uid=") === -1) {
-            target += (target.indexOf("?") === -1 ? "?" : "&") + search.replace(/^\?/, "");
-          }
-          window.location.replace(target);
+      var pMarker = "/p/";
+      var pIdx = path.indexOf(pMarker);
+
+      function redirectToPassport(uid, basePrefix) {
+        var target = basePrefix + "/p/?uid=" + encodeURIComponent(uid) + hash;
+        if (search && search.indexOf("uid=") === -1) {
+          target += (target.indexOf("?") === -1 ? "?" : "&") + search.replace(/^\?/, "");
+        }
+        window.location.replace(target);
+      }
+
+      if (pIdx !== -1 && path.slice(pIdx + pMarker.length)) {
+        var uidFromP = path.slice(pIdx + pMarker.length).replace(/\/+$/, "");
+        if (uidFromP) {
+          redirectToPassport(decodeURIComponent(uidFromP), path.slice(0, pIdx));
           return;
         }
+      }
+
+      // Also support GS1-style root paths like /bat-demo/01/<gtin>/21/<serial>
+      var parts = path.replace(/\/+$/, "").split("/").filter(Boolean);
+      var ai01Index = parts.indexOf("01");
+      var ai21Index = parts.indexOf("21");
+      if (ai01Index !== -1 && ai21Index === ai01Index + 2 && parts.length >= ai21Index + 2) {
+        var uid = parts.slice(ai01Index, ai21Index + 2).join("/");
+        var basePrefix = "/" + parts.slice(0, ai01Index).join("/");
+        redirectToPassport(uid, basePrefix === "/" ? "" : basePrefix);
+        return;
       }
       window.location.replace("./index.html");
     })();

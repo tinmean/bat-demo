@@ -125,9 +125,34 @@
       badge.className = "badge";
       badge.textContent = "開啟護照 / Open Passport";
 
+      var actions = document.createElement("div");
+      actions.className = "card-actions";
+
+      var copyBtn = document.createElement("button");
+      copyBtn.type = "button";
+      copyBtn.className = "btn btn-secondary btn-sm";
+      copyBtn.textContent = "複製 QR 連結 / Copy QR Link";
+
+      var copyStatus = document.createElement("span");
+      copyStatus.className = "copy-status muted small";
+      copyStatus.setAttribute("aria-live", "polite");
+
+      copyBtn.addEventListener("click", function () {
+        var urlToCopy = row.qrPayload || row.publicLandingUrl || buildAbsolutePassportUrl(row.uid);
+        copyToClipboard(urlToCopy).then(function () {
+          copyStatus.textContent = "已複製 / Copied";
+        }).catch(function () {
+          copyStatus.textContent = "複製失敗 / Copy failed";
+        });
+      });
+
+      actions.appendChild(copyBtn);
+      actions.appendChild(copyStatus);
+
       card.appendChild(link);
       card.appendChild(dl);
       card.appendChild(badge);
+      card.appendChild(actions);
       container.appendChild(card);
     });
   }
@@ -599,6 +624,31 @@
 
   function sanitizeFilename(input) {
     return String(input || "file").replace(/[^a-z0-9._-]+/gi, "_");
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(String(text || ""));
+    }
+
+    return new Promise(function (resolve, reject) {
+      try {
+        var textarea = document.createElement("textarea");
+        textarea.value = String(text || "");
+        textarea.setAttribute("readonly", "");
+        textarea.style.position = "fixed";
+        textarea.style.top = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        var ok = document.execCommand("copy");
+        textarea.remove();
+        if (ok) resolve();
+        else reject(new Error("execCommand copy failed"));
+      } catch (err) {
+        reject(err);
+      }
+    });
   }
 
   function escapeHtml(input) {

@@ -203,6 +203,14 @@ input[type="search"]:focus {
   color: var(--brand);
 }
 
+.card-actions {
+  margin-top: 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .muted {
   color: var(--muted);
   font-size: 0.95rem;
@@ -263,6 +271,27 @@ input[type="search"]:focus {
 .btn:focus {
   background: #004a7a;
   border-color: #004a7a;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: var(--brand);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--brand-soft);
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.btn-sm {
+  padding: 0.45rem 0.7rem;
+  font-size: 0.86rem;
+}
+
+.copy-status {
+  min-height: 1em;
 }
 
 .qr-card {
